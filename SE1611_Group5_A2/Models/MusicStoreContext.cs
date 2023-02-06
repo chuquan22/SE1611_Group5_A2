@@ -29,8 +29,8 @@ namespace SE1611_Group5_A2.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-               .AddJsonFile("appsettings.json", true, true)
-               .Build();
+                .AddJsonFile("appsettings.json", true, true)
+                .Build();
             string con = connectionString.GetConnectionString("MusicStoreContext");
             optionsBuilder.UseSqlServer(con);
         }

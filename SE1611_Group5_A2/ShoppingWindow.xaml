@@ -6,29 +6,28 @@
         xmlns:local="clr-namespace:SE1611_Group5_A2"
         mc:Ignorable="d"
         Title="ShoppingWindow"
-        
         Width="800"
         Background="LightBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
 
         <TextBlock Grid.Row="0">
             <Label Margin="5"
-                   Content="Genre:"></Label>
+                   Content="Genre:" ></Label>
             <ComboBox Width="300"
                       Name="cbGenre"
                       Height="25"
                       Margin="5"
                       SelectedValue="{Binding Path=GenreId}"
                       SelectedValuePath="GenreId"
-                      
-                      DisplayMemberPath="Name" />
+                      DisplayMemberPath="Name" 
+                      />
             <Button Name="btnSearch"
                     Content="Search"
                     Click="btnSearch_Click"
@@ -39,13 +38,13 @@
 
         <DockPanel Grid.Row="1">
             
-            <StackPanel HorizontalAlignment="Left" Margin="40">
+            <StackPanel HorizontalAlignment="Left" Margin="30">
                 <TextBlock>
                     <Label Name="title1"
-                           Content="Bark at the Moon (Remastered)"></Label>
-                    <Label Content=":"></Label>
-                    <Label Name="Price1" Content="8.99"></Label>
+                           Content="{Binding Title1}"></Label>
+                    
                 </TextBlock>
+
 
                 <Image Name="img1"
                        Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png" Width="50" Height="50"></Image>
@@ -53,13 +52,11 @@
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Right"
-                        Margin="40">
+                        Margin="30">
                 <TextBlock>
                     <Label Name="title2"
-                           Content="Bark at the Moon (Remastered)"></Label>
-                    <Label Content=":"></Label>
-                    <Label Name="Price2"
-                           Content="8.99"></Label>
+                           Content="{Binding Title2}"></Label>
+                    
                 </TextBlock>
                 <Image Name="img2"
                        Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png"
@@ -73,13 +70,11 @@
 
         <DockPanel Grid.Row="2">
             <StackPanel HorizontalAlignment="Left"
-                        Margin="40">
+                        Margin="30">
                 <TextBlock>
                     <Label Name="title3"
-                           Content="Bark at the Moon (Remastered)"></Label>
-                    <Label Content=":"></Label>
-                    <Label Name="Price3"
-                           Content="8.99"></Label>
+                           Content="{Binding Title3}"></Label>
+                    
                 </TextBlock>
                 <Image Name="img3"
                        Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png"
@@ -91,13 +86,11 @@
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Right"
-                        Margin="40">
+                        Margin="30">
                 <TextBlock>
                     <Label Name="title4"
-                           Content="Bark at the Moon (Remastered)"></Label>
-                    <Label Content=":"></Label>
-                    <Label Name="Price4"
-                           Content="8.99"></Label>
+                           Content="{Binding Title4}"></Label>
+                    
                 </TextBlock>
                 <Image Name="img4"
                        Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png"
