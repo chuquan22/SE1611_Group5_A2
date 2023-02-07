@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SE1611_Group5_A2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,6 @@ namespace SE1611_Group5_A2
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void btn_MoveXaml(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SE1611_Group5_A2"
         mc:Ignorable="d"
         Title="ShoppingWindow"
+        Height="450"
         Width="800"
         Background="LightBlue">
     <Grid>
@@ -18,16 +19,16 @@
 
 
         <TextBlock Grid.Row="0">
+           
             <Label Margin="5"
-                   Content="Genre:" ></Label>
+                   Content="Genre:"></Label>
             <ComboBox Width="300"
                       Name="cbGenre"
                       Height="25"
                       Margin="5"
                       SelectedValue="{Binding Path=GenreId}"
                       SelectedValuePath="GenreId"
-                      DisplayMemberPath="Name" 
-                      />
+                      DisplayMemberPath="Name" />
             <Button Name="btnSearch"
                     Content="Search"
                     Click="btnSearch_Click"
@@ -37,26 +38,38 @@
         </TextBlock>
 
         <DockPanel Grid.Row="1">
-            
-            <StackPanel HorizontalAlignment="Left" Margin="30">
+
+            <StackPanel HorizontalAlignment="Left"
+                        Margin="20">
+                <TextBox Name="AlbumId1"
+                         HorizontalAlignment="Left"
+                         Visibility="Hidden"
+                          />
                 <TextBlock>
                     <Label Name="title1"
+                           HorizontalAlignment="Center"
                            Content="{Binding Title1}"></Label>
-                    
                 </TextBlock>
-
-
                 <Image Name="img1"
-                       Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png" Width="50" Height="50"></Image>
-                <Button Name="btnAdd1" Content="Add To Cart" Click="btn_AddToCart"></Button>
+                       Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png"
+                       Width="50"
+                       Height="50"></Image>
+                <Button Name="btnAdd1"
+                        Content="Add To Cart"
+                        Width="80" 
+                        Click="btn_AddToCart1"></Button>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Right"
-                        Margin="30">
+                        Margin="20">
+                <TextBox Name="AlbumId2"
+                         HorizontalAlignment="Left"
+                         Visibility="Hidden"
+                         Text="{Binding AlbumId2, Mode=OneWay}" />
                 <TextBlock>
                     <Label Name="title2"
+                           HorizontalAlignment="Center"
                            Content="{Binding Title2}"></Label>
-                    
                 </TextBlock>
                 <Image Name="img2"
                        Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png"
@@ -64,17 +77,23 @@
                        Height="50"></Image>
                 <Button Name="btnAdd2"
                         Content="Add To Cart"
-                        Click="btn_AddToCart"></Button>
+                        Width="80"
+                        Click="btn_AddToCart2"></Button>
             </StackPanel>
         </DockPanel>
 
         <DockPanel Grid.Row="2">
             <StackPanel HorizontalAlignment="Left"
-                        Margin="30">
+                        Margin="20">
+                <TextBox Name="AlbumId3"
+                         HorizontalAlignment="Left"
+                         Visibility="Hidden"
+                         Text="{Binding AlbumId3, Mode=OneWay}" />
                 <TextBlock>
                     <Label Name="title3"
+                           HorizontalAlignment="Center"
                            Content="{Binding Title3}"></Label>
-                    
+
                 </TextBlock>
                 <Image Name="img3"
                        Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png"
@@ -82,15 +101,20 @@
                        Height="50"></Image>
                 <Button Name="btnAdd3"
                         Content="Add To Cart"
-                        Click="btn_AddToCart"></Button>
+                        Width="80"
+                        Click="btn_AddToCart3"></Button>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Right"
-                        Margin="30">
+                        Margin="20">
+                <TextBox Name="AlbumId4"
+                         HorizontalAlignment="Left"
+                         Visibility="Hidden"
+                         Text="{Binding AlbumId4, Mode=OneWay}" />
                 <TextBlock>
                     <Label Name="title4"
+                           HorizontalAlignment="Center"
                            Content="{Binding Title4}"></Label>
-                    
                 </TextBlock>
                 <Image Name="img4"
                        Source="https://png.pngtree.com/png-clipart/20220726/original/pngtree-red-color-music-logo-design-png-image_8395924.png"
@@ -98,17 +122,25 @@
                        Height="50"></Image>
                 <Button Name="btnAdd4"
                         Content="Add To Cart"
-                        Click="btn_AddToCart"></Button>
+                        Width="80"
+                        Click="btn_AddToCart4"></Button>
             </StackPanel>
         </DockPanel>
-        <TextBlock Grid.Row="3" HorizontalAlignment="Center">
-            <Button Name="btn_Previous" Content="Previous" Height="25" Margin="10"
+        <TextBlock Grid.Row="3"
+                   HorizontalAlignment="Center">
+            <Button Name="btn_Previous"
+                    Content="Previous"
+                    Height="25"
+                    Width="70"
+                    Margin="5"
                     Click="btn_Previous_Click"></Button>
             <Button Name="btn_Next"
-                    Content="Next" Height="25"
-                    Margin="10" Width="50"
+                    Content="Next"
+                    Height="25"
+                    Margin="5"
+                    Width="70"
                     Click="btn_Next_Click"></Button>
         </TextBlock>
-        
+
     </Grid>
 </Window>

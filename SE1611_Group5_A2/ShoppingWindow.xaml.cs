@@ -32,11 +32,13 @@ namespace SE1611_Group5_A2
             }
         }
         public int index = 0;
+        int? genreId = 0;
         public string title_1 = "";
         public string title_2 = "";
         public string title_3 = "";
         public string title_4 = "";
-        
+        MusicStoreContext context = new MusicStoreContext();
+
         public ShoppingWindow()
         {
             InitializeComponent();
@@ -48,16 +50,16 @@ namespace SE1611_Group5_A2
         private void LoadData(int index, int? genreId)
         {
             int count = 0;
-            MusicStoreContext context = new MusicStoreContext();
+            
             cbGenre.ItemsSource = context.Genres.ToList();
             if (genreId.Value == 0)
             {
                 foreach (Album album in context.Albums.ToList())
                 {
-                    if (count == index) { Title1 = album.Title + ": " + album.Price + " USD"; }
-                    if (count == index + 1) { Title2 = album.Title + ": " + album.Price + " USD"; }
-                    if (count == index + 2) { Title3 = album.Title + ": " + album.Price + " USD"; }
-                    if (count == index + 3) { Title4 = album.Title + ": " + album.Price + " USD"; }
+                    if (count == index) { Title1 = album.Title + ": " + album.Price + " USD"; AlbumId1.Text = album.AlbumId.ToString(); }
+                    if (count == index + 1) { Title2 = album.Title + ": " + album.Price + " USD"; AlbumId2.Text = album.AlbumId.ToString(); }
+                    if (count == index + 2) { Title3 = album.Title + ": " + album.Price + " USD"; AlbumId3.Text = album.AlbumId.ToString(); }
+                    if (count == index + 3) { Title4 = album.Title + ": " + album.Price + " USD"; AlbumId4.Text = album.AlbumId.ToString(); }
                     count++;
                 }
             }
@@ -66,10 +68,10 @@ namespace SE1611_Group5_A2
                 count = 0;
                 foreach (Album album in context.Albums.Where(x => x.GenreId == genreId.Value).ToList())
                 {
-                        if (count == index) { Title1 = album.Title + ": " + album.Price + " USD"; }
-                        if (count == index + 1) { Title2 = album.Title + ": " + album.Price + " USD"; }
-                        if (count == index + 2) { Title3 = album.Title + ": " + album.Price + " USD"; }
-                        if (count == index + 3) { Title4 = album.Title + ": " + album.Price + " USD"; }
+                        if (count == index) { Title1 = album.Title + ": " + album.Price + " USD"; AlbumId1.Text = album.AlbumId.ToString(); }
+                        if (count == index + 1) { Title2 = album.Title + ": " + album.Price + " USD"; AlbumId2.Text = album.AlbumId.ToString(); }
+                        if (count == index + 2) { Title3 = album.Title + ": " + album.Price + " USD"; AlbumId3.Text = album.AlbumId.ToString(); }
+                        if (count == index + 3) { Title4 = album.Title + ": " + album.Price + " USD"; AlbumId4.Text = album.AlbumId.ToString(); }
                         count++;
                 }
             }
@@ -78,27 +80,99 @@ namespace SE1611_Group5_A2
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            int? genreId = 0;
+            index= 0; 
             string? genre = cbGenre.SelectedValue?.ToString();
             if (string.IsNullOrWhiteSpace(genre)) { } else
             {
                  genreId = int.Parse(genre);
             }
-            LoadData(0, genreId);
-        }
-
-        private void btn_AddToCart(object sender, RoutedEventArgs e)
-        {
-
+            LoadData(index, genreId);
         }
 
         private void btn_Previous_Click(object sender, RoutedEventArgs e)
         {
-
+            index -= 4;
+            if (index < 0)
+            {
+                MessageBox.Show("Can't to previous page, please enter the Next to next page");
+                index = 0;
+                return;
+            }
+            else
+            {
+                LoadData(index, genreId);
+            }
         }
 
         private void btn_Next_Click(object sender, RoutedEventArgs e)
         {
+            index += 4;
+            if (index >= (genreId == 0 ? context.Albums.Count() : context.Albums.Where(x=>x.GenreId == genreId).Count()))
+            {
+                MessageBox.Show("Can't to next page, please enter the Previous to previous page");
+                index -= 4;
+                return;
+            }
+            else
+            {
+                LoadData(index, genreId);
+            }
+        }
+
+        private void btn_AddToCart1(object sender, RoutedEventArgs e)
+        {
+            int albumId = 0;
+            string? albumID = AlbumId1.Text.ToString();
+            if (!string.IsNullOrWhiteSpace(albumID)) 
+            { 
+                albumId= int.Parse(albumID);
+                Album album = context.Albums.Where(x => x.AlbumId == albumId).FirstOrDefault();
+                MessageBox.Show(album.AlbumId.ToString());
+                //MainWindow mainWindow = new MainWindow(album);
+                //mainWindow.Show();
+            }
+            
+        }
+
+        private void btn_AddToCart2(object sender, RoutedEventArgs e)
+        {
+            int albumId = 0;
+            string? albumID = AlbumId2.Text.ToString();
+            if (!string.IsNullOrWhiteSpace(albumID))
+            {
+                albumId = int.Parse(albumID);
+                Album album = context.Albums.Where(x => x.AlbumId == albumId).FirstOrDefault();
+                MessageBox.Show(album.AlbumId.ToString());
+
+            }
+
+        }
+
+        private void btn_AddToCart3(object sender, RoutedEventArgs e)
+        {
+            int albumId = 0;
+            string? albumID = AlbumId3.Text.ToString();
+            if (!string.IsNullOrWhiteSpace(albumID))
+            {
+                albumId = int.Parse(albumID);
+                Album album = context.Albums.Where(x => x.AlbumId == albumId).FirstOrDefault();
+                MessageBox.Show(album.AlbumId.ToString());
+
+            }
+
+        }
+
+        private void btn_AddToCart4(object sender, RoutedEventArgs e)
+        {
+            int albumId = 0;
+            string? albumID = AlbumId4.Text.ToString();
+            if (!string.IsNullOrWhiteSpace(albumID))
+            {
+                albumId = int.Parse(albumID);
+                Album album = context.Albums.Where(x => x.AlbumId == albumId).FirstOrDefault();
+                MessageBox.Show(album.AlbumId.ToString());
+
+            }
 
         }
 
@@ -123,6 +197,6 @@ namespace SE1611_Group5_A2
             set { title_4 = value ;  OnPropertyChanged("Title4"); }
         }
 
-        
+       
     }
 }
