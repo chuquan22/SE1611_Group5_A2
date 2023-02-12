@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\FULearning\Spring2023\PRN221\SE1611_Group5_A2\SE1611_Group5_A2\App.xaml
-2-753573680
+4968717603
 
-15-1406072999
+16-818546796
 220962057446
-MainWindow.xaml;ShoppingWindow.xaml;
+AlbumWindow.xaml;LoginWindow.xaml;MainWindow.xaml;ShoppingWindow.xaml;
 
-False
+True
 

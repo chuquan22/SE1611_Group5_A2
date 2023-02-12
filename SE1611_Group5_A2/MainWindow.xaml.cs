@@ -1,7 +1,9 @@
-﻿using SE1611_Group5_A2.Models;
+﻿using Assignment2;
+using SE1611_Group5_A2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,6 +26,63 @@ namespace SE1611_Group5_A2
         public MainWindow()
         {
             InitializeComponent();
+        }
+        internal static bool isLogin = false;
+        internal static bool isAdmin = false;
+        internal static string username = "";
+        private void LoginLogout_Click(object sender, RoutedEventArgs e)
+        {
+            // if login
+            if (isLogin)
+            {
+                // if login as admin
+                if (isAdmin)
+                {
+                    menuAlbum.IsEnabled = false;
+                }
+                menuLogin.Header = "Login";
+                isLogin = false;
+                username = "";
+            }
+            else
+            {
+                LoginWindow login = new LoginWindow();
+                login.ShowDialog();
+            }
+
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            // if login
+            if (isLogin)
+            {
+
+                menuLogin.Header = "Logout(" + username + ")";
+                // if admin
+                if (isAdmin)
+                {
+                    menuAlbum.IsEnabled = true;
+                }
+
+            }
+        }
+
+        private void Shopping_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingWindow shoppingWindow = new ShoppingWindow();
+            shoppingWindow.ShowDialog();
+        }
+
+        private void Cart_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            AlbumWindow albumWindow = new AlbumWindow();
+            albumWindow.ShowDialog();
         }
     }
 }

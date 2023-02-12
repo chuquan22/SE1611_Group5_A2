@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SE1611_Group5_A2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800"
+        Activated="Window_Activated">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"></RowDefinition>
+            <RowDefinition Height="384*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0">
+            <Menu>
+                <MenuItem Header="_Shopping" Click="Shopping_Click"></MenuItem>
+                <MenuItem Header="_Cart(0)" Click="Cart_Click"></MenuItem>
+                <MenuItem Name="menuLogin"
+                          Header="_Login"
+                          Click="LoginLogout_Click"></MenuItem>
+                <MenuItem Name="menuAlbum"
+                          Header="_Album"
+                          Click="MenuAlbum_Click"
+                          IsEnabled="False" />
+            </Menu>
+        </WrapPanel>
+
+        <Image Source="http://assets.stickpng.com/thumbs/585ab2224f6ae202fedf2921.png"
+               Grid.ColumnSpan="3"
+               Margin="0,25,0,0"
+               Grid.Row="1" />
+
+        <Label Grid.Row="2"
+               Content="SE1611__Group 5 : Chu Quang Quân, Nguyễn Minh Đức, Đoàn Ngọc Hòa, Nguyễn Anh Tuấn"></Label>
     </Grid>
 </Window>

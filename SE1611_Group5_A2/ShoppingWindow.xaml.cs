@@ -44,6 +44,7 @@ namespace SE1611_Group5_A2
             InitializeComponent();
             this.DataContext = this;
             LoadData(index, 0);
+            btn_Previous.IsEnabled= false;
         }
 
 
@@ -92,29 +93,34 @@ namespace SE1611_Group5_A2
         private void btn_Previous_Click(object sender, RoutedEventArgs e)
         {
             index -= 4;
-            if (index < 0)
+            if (index == 0)
             {
-                MessageBox.Show("Can't to previous page, please enter the Next to next page");
+                btn_Previous.IsEnabled = false;
+                LoadData(index, genreId);
                 index = 0;
-                return;
+                
             }
             else
             {
+                btn_Previous.IsEnabled = true;
                 LoadData(index, genreId);
             }
+
         }
 
         private void btn_Next_Click(object sender, RoutedEventArgs e)
         {
             index += 4;
+            btn_Previous.IsEnabled= true;
             if (index >= (genreId == 0 ? context.Albums.Count() : context.Albums.Where(x=>x.GenreId == genreId).Count()))
             {
-                MessageBox.Show("Can't to next page, please enter the Previous to previous page");
+                btn_Next.IsEnabled = false;
                 index -= 4;
                 return;
             }
             else
             {
+                btn_Next.IsEnabled = true;
                 LoadData(index, genreId);
             }
         }
@@ -127,7 +133,12 @@ namespace SE1611_Group5_A2
             { 
                 albumId= int.Parse(albumID);
                 Album album = context.Albums.Where(x => x.AlbumId == albumId).FirstOrDefault();
-                MessageBox.Show(album.AlbumId.ToString());
+                MessageBoxResult msgBoxResult = MessageBox.Show("Do you want to coutinue buy Album?", "Buy more", MessageBoxButton.YesNo);
+                if (msgBoxResult == MessageBoxResult.Yes) return;
+                else
+                {
+
+                }
                 //MainWindow mainWindow = new MainWindow(album);
                 //mainWindow.Show();
             }
@@ -142,7 +153,12 @@ namespace SE1611_Group5_A2
             {
                 albumId = int.Parse(albumID);
                 Album album = context.Albums.Where(x => x.AlbumId == albumId).FirstOrDefault();
-                MessageBox.Show(album.AlbumId.ToString());
+                MessageBoxResult msgBoxResult = MessageBox.Show("Do you want to coutinue buy Album?", "Buy more", MessageBoxButton.YesNo);
+                if (msgBoxResult == MessageBoxResult.Yes) return;
+                else
+                {
+
+                }
 
             }
 
@@ -156,8 +172,12 @@ namespace SE1611_Group5_A2
             {
                 albumId = int.Parse(albumID);
                 Album album = context.Albums.Where(x => x.AlbumId == albumId).FirstOrDefault();
-                MessageBox.Show(album.AlbumId.ToString());
+                MessageBoxResult msgBoxResult = MessageBox.Show("Do you want to coutinue buy Album?", "Buy more", MessageBoxButton.YesNo);
+                if (msgBoxResult == MessageBoxResult.Yes) return;
+                else
+                {
 
+                }
             }
 
         }
@@ -170,8 +190,12 @@ namespace SE1611_Group5_A2
             {
                 albumId = int.Parse(albumID);
                 Album album = context.Albums.Where(x => x.AlbumId == albumId).FirstOrDefault();
-                MessageBox.Show(album.AlbumId.ToString());
+                MessageBoxResult msgBoxResult = MessageBox.Show("Do you want to coutinue buy Album?", "Buy more", MessageBoxButton.YesNo);
+                if (msgBoxResult == MessageBoxResult.Yes) return;
+                else
+                {
 
+                }
             }
 
         }
