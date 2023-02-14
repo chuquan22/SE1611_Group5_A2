@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FULearning\\Spring2023\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\SE1611_Group5_A2.csproj": {}
+    "D:\\Study\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\SE1611_Group5_A2.csproj": {}
   },
   "projects": {
-    "D:\\FULearning\\Spring2023\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\SE1611_Group5_A2.csproj": {
+    "D:\\Study\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\SE1611_Group5_A2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FULearning\\Spring2023\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\SE1611_Group5_A2.csproj",
+        "projectUniqueName": "D:\\Study\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\SE1611_Group5_A2.csproj",
         "projectName": "SE1611_Group5_A2",
-        "projectPath": "D:\\FULearning\\Spring2023\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\SE1611_Group5_A2.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\FULearning\\Spring2023\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\obj\\",
+        "projectPath": "D:\\Study\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\SE1611_Group5_A2.csproj",
+        "packagesPath": "C:\\Users\\nanht\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\PRN221\\SE1611_Group5_A2\\SE1611_Group5_A2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nanht\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +78,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
