@@ -8,5 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Go To your xaml" Click="btn_MoveXaml"></Button>
+        <Button x:Name="toCheckoutBtn" Content="To Checkout" Padding="10" Height="70"
+                HorizontalAlignment="Left" Click="toCheckoutBtn_Click"
+                ></Button>
+    
     </Grid>
 </Window>

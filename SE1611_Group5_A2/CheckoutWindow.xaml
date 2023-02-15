@@ -28,52 +28,52 @@
                    >Invoice</TextBlock>
         <StackPanel Margin="10 0" Grid.Row="1">
             <Label Content="FirstName" Height="28" Name="FirstNameLabel" Target="{Binding ElementName=FirstName}" />
-            <TextBox  Name="FirstName"></TextBox>
+            <TextBox  x:Name="FirstName"></TextBox>
         </StackPanel>
         <StackPanel Margin="10 0" Grid.Row="2">
             <Label Content="LastName" Height="28" Name="LastNameLabel" Target="{Binding ElementName=LastName}" />
-            <TextBox Name="LastName"></TextBox>
+            <TextBox x:Name="LastName"></TextBox>
         </StackPanel>
         <StackPanel Margin="10 0" Grid.Row="1" Grid.Column="1">
             <Label Content="Phone" Height="28" Name="PhoneLabel" Target="{Binding ElementName=Phone}" />
-            <TextBox Name="Phone"></TextBox>
+            <TextBox x:Name="Phone"></TextBox>
         </StackPanel>
         <StackPanel Margin="10 0" Grid.Row="2" Grid.Column="1">
             <Label Content="Email" Height="28" Name="EmailLabel" Target="{Binding ElementName=Email}" />
-            <TextBox Name="Email"></TextBox>
+            <TextBox x:Name="Email"></TextBox>
         </StackPanel>
         <StackPanel Margin="10 0" Grid.Row="3">
             <Label Content="Address" Height="28" Name="AddressLabel" Target="{Binding ElementName=Address}" />
-            <TextBox Name="Address"></TextBox>
+            <TextBox x:Name="Address"></TextBox>
         </StackPanel>
         <StackPanel Margin="130 0" Grid.Row="3" Grid.Column="1">
             <Label Content="Total" FontWeight="Bold" Height="28" Name="TotalLabel" Target="{Binding ElementName=Total}" />
-            <TextBox Name="Total"></TextBox>
+            <TextBox x:Name="Total"></TextBox>
         </StackPanel>
         <StackPanel Margin="10 0" Grid.Row="4">
             <Label Content="City" Height="28" Name="CityLabel" Target="{Binding ElementName=City}" />
-            <TextBox Name="City"></TextBox>
+            <TextBox x:Name="City"></TextBox>
         </StackPanel>
         <StackPanel Margin="130 0" Grid.Row="4" Grid.Column="1">
             <Label Content="Cash" FontWeight="Bold" Height="28" Name="CashLabel" Target="{Binding ElementName=Cash}" />
-            <TextBox Name="Cash"></TextBox>
+            <TextBox x:Name="Cash"></TextBox>
         </StackPanel>
         <StackPanel Margin="10 0" Grid.Row="5">
             <Label Content="State" Height="28" Name="StateLabel" Target="{Binding ElementName=State}" />
-            <TextBox Name="State"></TextBox>
+            <TextBox x:Name="State"></TextBox>
         </StackPanel>
         <StackPanel Margin="130 0" Grid.Row="5" Grid.Column="1">
             <Label Content="Remain" FontWeight="Bold" Height="28" Name="RemainLabel" Target="{Binding ElementName=Remain}" />
-            <TextBox Name="Remain"></TextBox>
+            <TextBox x:Name="Remain"></TextBox>
         </StackPanel>
         <StackPanel Margin="10 0" Grid.Row="6">
             <Label Content="Country" Height="28" Name="CountryLabel" Target="{Binding ElementName=Country}" />
-            <TextBox Name="Country"></TextBox>
+            <TextBox x:Name="Country"></TextBox>
         </StackPanel>
         <Button Margin="10 0" Grid.Row="7" Content="Save"
                 Padding="5"
                     HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
+                    VerticalAlignment="Center" Click="Button_Click"
                     ></Button>
         <Button Margin="10 0" Padding="5"
                 Grid.Row="7" Grid.Column="1" Content="Cancel"

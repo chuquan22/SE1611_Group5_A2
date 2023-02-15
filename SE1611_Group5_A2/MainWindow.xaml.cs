@@ -29,5 +29,11 @@ namespace SE1611_Group5_A2
         {
             
         }
+
+        private void toCheckoutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CheckoutWindow checkoutWindow = new CheckoutWindow();
+            checkoutWindow.Show();
+        }
     }
 }
