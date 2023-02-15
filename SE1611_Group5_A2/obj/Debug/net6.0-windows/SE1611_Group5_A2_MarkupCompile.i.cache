@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\FULearning\Spring2023\PRN221\SE1611_Group5_A2\SE1611_Group5_A2\obj\Debug\net6.0-windows\
+D:\Study\PRN221\SE1611_Group5_A2\SE1611_Group5_A2\obj\Debug\net6.0-windows\
 SE1611_Group5_A2
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\FULearning\Spring2023\PRN221\SE1611_Group5_A2\SE1611_Group5_A2\App.xaml
-2-753573680
+D:\Study\PRN221\SE1611_Group5_A2\SE1611_Group5_A2\App.xaml
+31945926408
 
-14776018776
-220962057446
-MainWindow.xaml;ShoppingWindow.xaml;
+15-69023484
+2201162241675
+CheckoutWindow.xaml;MainWindow.xaml;ShoppingWindow.xaml;
 
-False
+True
 
