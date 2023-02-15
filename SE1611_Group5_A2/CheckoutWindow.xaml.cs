@@ -25,7 +25,7 @@ namespace SE1611_Group5_A2
         public CheckoutWindow()
         {
             InitializeComponent();
-            _context= new MusicStoreContext();
+            _context = new MusicStoreContext();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,8 +38,49 @@ namespace SE1611_Group5_A2
             string country = Country.Text.Trim();
             string phone = Phone.Text.Trim();
             string email = Email.Text.Trim();
-            decimal total ;
-            if (!decimal.TryParse(Total.Text.Trim(),out total))
+            decimal total;
+            if (firstName.Equals(""))
+            {
+                MessageBox.Show("first name ko đc trống", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (lastName.Equals(""))
+            {
+                MessageBox.Show("last Name ko đc trống", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (address.Equals(""))
+            {
+                MessageBox.Show("address ko đc trống", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (city.Equals(""))
+            {
+                MessageBox.Show("city ko đc trống", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (state.Equals(""))
+            {
+                MessageBox.Show("state ko đc trống", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (country.Equals(""))
+            {
+                MessageBox.Show("country ko đc trống", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (phone.Equals(""))
+            {
+                MessageBox.Show("phone ko đc trống", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (email.Equals(""))
+            {
+                MessageBox.Show("email ko đc trống", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(Total.Text.Trim(), out total))
             {
                 MessageBox.Show("Total phải không được bỏ trống và là số", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -60,7 +101,7 @@ namespace SE1611_Group5_A2
             _context.Orders.Add(order);
             _context.SaveChanges();
             int orderId = order.OrderId;
-            MessageBox.Show("Order = "+orderId+" is saved", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Order = " + orderId + " is saved", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             //SaveOrder(order);
         }
 
@@ -97,9 +138,9 @@ namespace SE1611_Group5_A2
                     command.Parameters.AddWithValue("@Total", order.Total);
 
                     // Thực thi câu lệnh SQL
-                    int saveSuccessful= command.ExecuteNonQuery();
+                    int saveSuccessful = command.ExecuteNonQuery();
 
-                  
+
                     if (saveSuccessful > 0)
                     {
                         MessageBox.Show("Order đã được lưu thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
